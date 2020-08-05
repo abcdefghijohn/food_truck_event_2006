@@ -15,4 +15,5 @@ class Event
       truck.name
     end
   end
+
 end
