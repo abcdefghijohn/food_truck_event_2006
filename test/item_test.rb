@@ -9,7 +9,7 @@ class ItemTest < Minitest::Test
 
     assert_instance_of Item, item1
     assert_instance_of Item, item2
-    assert_equal "Apple Pie(Slice)", item2.name
+    assert_equal "Apple Pie (Slice)", item2.name
     assert_equal 2.50, item2.price
   end
 end
