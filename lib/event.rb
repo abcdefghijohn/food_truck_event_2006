@@ -31,4 +31,14 @@ class Event
       collector
     end
   end
+
+  def overstocked_items
+    sold_items.find_all do |item|
+      total_inventory[item][:quantity] > 50 && food_truck_that_sell(item).count > 1
+    end
+  end
+
+  def sold_items
+  total_inventory.keys
+  end
 end
