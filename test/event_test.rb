@@ -12,4 +12,6 @@ class EventTest < Minitest::Test
     assert_instance_of Event, event
     assert_equal "South Pearl Street Farmers Market", event.name
   end
+
+  
 end
