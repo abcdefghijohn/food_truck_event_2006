@@ -21,4 +21,14 @@ class Event
       truck.check_stock(item) > 0
     end
   end
+
+  def total_inventory
+    @food_trucks.reduce(Hash.new{ |h,k| h[k] = {quantity: 0, food_trucks: []}}) do |collector, food_truck|
+      food_truck.inventory.each do |item, amount|
+        collector[item][:quantity] += amount
+        collector[item][:food_trucks] << food_truck
+      end
+      collector
+    end
+  end
 end
